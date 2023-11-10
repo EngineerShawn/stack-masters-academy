@@ -1,1 +1,0 @@
-# stack-masters-academy

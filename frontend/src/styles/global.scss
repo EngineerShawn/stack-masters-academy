@@ -1,0 +1,18 @@
+// Define your gradient colors and angle
+$gradient-start: #0f0c29;  // deep violet
+$gradient-end: #302b63;    // muted purple
+$gradient-accent: #24243e; // dark slate
+
+// Apply the gradient to the body or a specific container
+body {
+  background: linear-gradient(135deg, $gradient-start, $gradient-accent, $gradient-end);
+  background-size: 400% 400%;
+  animation: GradientAnimation 15s ease infinite;
+}
+
+// Keyframes for gradient background animation
+@keyframes GradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
