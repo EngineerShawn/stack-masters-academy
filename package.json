@@ -2,9 +2,9 @@
   "name": "stack-masters-academy",
   "version": "1.0.0",
   "description": "",
-  "main": "./frontend/src/index.jsx",
+  "main": "./frontend/src/App.jsx",
   "scripts": {
-    "start": "node ./frontend/src/index.js",
+    "start": "node ./frontend/src/App.jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header/Header';
-import LoginForm from './components/LoginForm/LoginForm';
-import HomePage from './components/HomePage/HomePage';
-import Courses from './components/Courses/Courses';
-import Services from './components/Services/Services';
-import Contact from './components/Contact/Contact';
-import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
-import TermsConditions from './components/TermsConditions/TermsConditions';
+import NavigationBar from './components/NavigationBar.jsx';
+import Home from './pages/Home.jsx';
+import LoginRegister from './components/LoginRegister.jsx';
+import Courses from './pages/Courses.jsx';
+import Background from './components/Background.jsx';
+import Services from './pages/Services.jsx';
+import Contact from './pages/Contact.jsx';
+import './styles/global.scss';
 import './App.scss';
 
 const App = () => {
   const [loginFormVisible, setLoginFormVisible] = useState(false);
 
   return (
+    <Background />,
+    <head>
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    </head>,
     <Router>
-      <Header onLoginClick={() => setLoginFormVisible(true)} />
-      {loginFormVisible && <LoginForm onClose={() => setLoginFormVisible(false)} isFormOpen={loginFormVisible} />}
+      <NavigationBar onLoginClick={() => {console.log("Login clicked");setLoginFormVisible(true);}} />
+      {loginFormVisible && <LoginRegister onClose={() => setLoginFormVisible(false)} isFormOpen={loginFormVisible} />}
       <Routes>
-        {/* Define your routes here */}
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-conditions" element={<TermsConditions />} />
       </Routes>
     </Router>
   );

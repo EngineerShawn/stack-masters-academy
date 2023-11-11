@@ -1,8 +1,7 @@
-// Contact.js
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import  './Contact.scss';
+// import NavigationBar from '../components/NavigationBar';
+import Background from '../components/Background'
 
 const Contact = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -70,7 +69,8 @@ const Contact = () => {
                         <button className="button">Submit</button>
                     </form>
                 </div>
-            </div>
+            </div>,
+            <Background />
     );
 };
 export default Contact;

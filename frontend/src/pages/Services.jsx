@@ -1,10 +1,11 @@
-//Services.js
+//Services.jsx
 
 import React from 'react';
-import './Services.scss';
+import Background from '../components/Background.jsx';
 
 const Services = () => {
     return (
+        <Background />,
         <section className="services">
         <div className="services_container">
             <h2 className="section_title">Services</h2>
